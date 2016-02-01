@@ -1,0 +1,50 @@
+<template>
+  <section class="au-animate">
+    <h2>${heading}</h2>
+    <form role="form" submit.delegate="submit(simpleData)">
+      <div class="form-group">
+        <label for="fn">Company Name</label>
+        <input type="text" value.bind="simpleData.companyName" class="form-control" id="cn" placeholder="Company Name">
+      </div>
+      <div class="form-group">
+        <label for="ln">Full Agent Code</label>
+        <input type="text" value.bind="simpleData.fullAgentCode" class="form-control" id="fa" placeholder="IATA Agent Code">
+      </div>
+      <div class="form-group">
+        <label for="fn">Address</label>
+        <input type="text" value.bind="simpleData.address" class="form-control" id="cn" placeholder="Address">
+      </div>
+      <div class="form-group">
+        <label for="ln">Province</label>
+        <input type="text" value.bind="simpleData.province" class="form-control" id="fa" placeholder="Province">
+      </div>
+      <div class="form-group">
+        <label for="fn">Country</label>
+        <input type="text" value.bind="simpleData.country" class="form-control" id="cn" placeholder="Country">
+      </div>
+      <div class="form-group">
+        <label for="ln">Zip Code</label>
+        <input type="text" value.bind="simpleData.zipcode" class="form-control" id="fa" placeholder="ZIP Code">
+      </div>
+      <div class="form-group">
+        <label for="fn">Phone</label>
+        <input type="text" value.bind="simpleData.phone" class="form-control" id="cn" placeholder="Phone">
+      </div>
+      <div class="form-group">
+        <label for="ln">Fax</label>
+        <input type="text" value.bind="simpleData.fax" class="form-control" id="fa" placeholder="Fax">
+      </div>
+      
+      <div class="container">
+          <ul>
+              <li repeat.for="record of list">${record.companyName}
+                  <button click.trigger="$parent.edit($index)">Edit</button>
+                  <button click.trigger="$parent.delete($index)">Delete</button>
+              </li>
+          </ul>
+      </div>
+      
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </section>
+</template>
